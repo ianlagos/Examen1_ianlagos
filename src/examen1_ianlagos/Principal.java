@@ -96,6 +96,12 @@ public class Principal extends javax.swing.JFrame {
         tf_punt = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        Validar_usuarios = new javax.swing.JFrame();
+        jButton5 = new javax.swing.JButton();
+        Val_user = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        Val_contra = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -643,6 +649,60 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(65, 65, 65))
         );
 
+        Validar_usuarios.setMinimumSize(new java.awt.Dimension(300, 300));
+        Validar_usuarios.setPreferredSize(new java.awt.Dimension(300, 300));
+
+        jButton5.setText("Ingresar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setText("Usuario");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("Contraseña");
+
+        javax.swing.GroupLayout Validar_usuariosLayout = new javax.swing.GroupLayout(Validar_usuarios.getContentPane());
+        Validar_usuarios.getContentPane().setLayout(Validar_usuariosLayout);
+        Validar_usuariosLayout.setHorizontalGroup(
+            Validar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Validar_usuariosLayout.createSequentialGroup()
+                .addGroup(Validar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Validar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Val_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Validar_usuariosLayout.createSequentialGroup()
+                            .addGap(56, 56, 56)
+                            .addComponent(Val_user, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Validar_usuariosLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Validar_usuariosLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel23))
+                    .addGroup(Validar_usuariosLayout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel22)))
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+        Validar_usuariosLayout.setVerticalGroup(
+            Validar_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Validar_usuariosLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(Val_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
+                .addGap(18, 18, 18)
+                .addComponent(Val_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("CREAR CUENTA");
@@ -812,28 +872,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        if (false) {
-
-        } else {
-            Principal pc3 = new Principal();
-            pc3.setVisible(false);
-            dispose();
-            Menu_normal.setVisible(true);
-            Menu_normal.setLocationRelativeTo(this);
-            //
-            //
-            //
-
-            DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
-            for (int i = 0; i < normales.size(); i++) {
-                modelo.addRow(new Object[]{normales.get(i).getNombre(), normales.get(i).getEdad(), normales.get(i).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(i).getNumero_cuenta()});
-            }
-            DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
-            for (int i = 0; i < exams.size(); i++) {
-                modelo.addRow(new Object[]{exams.get(i).getClase(),exams.get(i).getConocimiento(), exams.get(i).getTema(), exams.get(i).getPuntaje()});
-            }
-        }
-
+        Principal pc3 = new Principal();
+        pc3.setVisible(false);
+        dispose();
+        Validar_usuarios.setVisible(true);
+        Validar_usuarios.setLocationRelativeTo(this);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
@@ -872,6 +915,36 @@ public class Principal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        String userv = Val_user.getText();
+        String contrav = Val_contra.getText();
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (userv.equals(listaUsuarios.get(i)) && contrav.equals(listacontra.get(i))) {
+                Principal pc3 = new Principal();
+                pc3.setVisible(false);
+                dispose();
+                Menu_normal.setVisible(true);
+                Menu_normal.setLocationRelativeTo(this);
+                //
+                //
+                //
+
+                DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
+                for (int k = 0; k < normales.size(); k++) {
+                    modelo.addRow(new Object[]{normales.get(k).getNombre(), normales.get(k).getEdad(), normales.get(k).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(k).getNumero_cuenta()});
+                }
+                DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
+                for (int j = 0; j < exams.size(); j++) {
+                    modelo.addRow(new Object[]{exams.get(j).getClase(), exams.get(j).getConocimiento(), exams.get(j).getTema(), exams.get(j).getPuntaje()});
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "contraseña o usuario erroneos");
+                break;
+            }
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -922,11 +995,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton GuardarN;
     private javax.swing.JButton GuardarT;
     private javax.swing.JFrame Menu_normal;
+    private javax.swing.JPasswordField Val_contra;
+    private javax.swing.JTextField Val_user;
+    private javax.swing.JFrame Validar_usuarios;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -941,6 +1018,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
