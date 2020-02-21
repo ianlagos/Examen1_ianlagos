@@ -17,11 +17,8 @@ public class Tutores extends Alumnos{
     protected int tutorias_dadas;
     protected int nivel_enseñansa;
 
-    public Tutores(double ganancias, int tutorias_dadas, int nivel_enseñansa, String nombre, int edad, String carrera, String lugar_Nac, String usuario, String contraseña) {
+    public Tutores(String nombre, int edad, String carrera, String lugar_Nac, String usuario, String contraseña) {
         super(nombre, edad, carrera, lugar_Nac, usuario, contraseña);
-        this.ganancias = ganancias;
-        this.tutorias_dadas = tutorias_dadas;
-        this.nivel_enseñansa = nivel_enseñansa;
     }
 
     public double getGanancias() {
