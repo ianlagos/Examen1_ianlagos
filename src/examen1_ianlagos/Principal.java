@@ -22,7 +22,18 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
-
+        DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
+        for (int k = 0; k < normales.size(); k++) {
+            modelo.addRow(new Object[]{normales.get(k).getNombre(), normales.get(k).getEdad(), normales.get(k).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(k).getNumero_cuenta()});
+        }
+        DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
+        for (int j = 0; j < exams.size(); j++) {
+            modelo.addRow(new Object[]{exams.get(j).getClase(), exams.get(j).getConocimiento(), exams.get(j).getTema(), exams.get(j).getPuntaje()});
+        }
+        DefaultTableModel modelo3 = (DefaultTableModel) tb_listartutor.getModel();
+        for (int k = 0; k < tutores.size(); k++) {
+            modelo.addRow(new Object[]{tutores.get(k).getNombre(), tutores.get(k).getEdad(), tutores.get(k).getCarrera(), tutores.get(1).getLugar_Nac(), tutores.get(k).getNumero_cuenta()});
+        }
     }
 
     /**
@@ -102,6 +113,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         Val_contra = new javax.swing.JPasswordField();
+        Menu_tutores = new javax.swing.JFrame();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tb_listartutor = new javax.swing.JTable();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -703,6 +725,151 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(37, 37, 37))
         );
 
+        Menu_tutores.setMinimumSize(new java.awt.Dimension(500, 500));
+        Menu_tutores.setPreferredSize(new java.awt.Dimension(550, 550));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Numero Cuenta"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(jTable5);
+        if (jTable5.getColumnModel().getColumnCount() > 0) {
+            jTable5.getColumnModel().getColumn(0).setResizable(false);
+            jTable5.getColumnModel().getColumn(1).setResizable(false);
+            jTable5.getColumnModel().getColumn(2).setResizable(false);
+            jTable5.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Modificar", jPanel8);
+
+        tb_listartutor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Numero Cuenta"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(tb_listartutor);
+        if (tb_listartutor.getColumnModel().getColumnCount() > 0) {
+            tb_listartutor.getColumnModel().getColumn(0).setResizable(false);
+            tb_listartutor.getColumnModel().getColumn(1).setResizable(false);
+            tb_listartutor.getColumnModel().getColumn(2).setResizable(false);
+            tb_listartutor.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Listar", jPanel9);
+
+        jPanel10.setPreferredSize(new java.awt.Dimension(650, 520));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(jTable3);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(198, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(398, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Dar Tutos", jPanel10);
+
+        javax.swing.GroupLayout Menu_tutoresLayout = new javax.swing.GroupLayout(Menu_tutores.getContentPane());
+        Menu_tutores.getContentPane().setLayout(Menu_tutoresLayout);
+        Menu_tutoresLayout.setHorizontalGroup(
+            Menu_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Menu_tutoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
+        );
+        Menu_tutoresLayout.setVerticalGroup(
+            Menu_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Menu_tutoresLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("CREAR CUENTA");
@@ -918,32 +1085,17 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
-        String userv = Val_user.getText();
-        String contrav = Val_contra.getText();
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-            if (userv.equals(listaUsuarios.get(i)) && contrav.equals(listacontra.get(i))) {
-                Principal pc3 = new Principal();
-                pc3.setVisible(false);
-                dispose();
-                Menu_normal.setVisible(true);
-                Menu_normal.setLocationRelativeTo(this);
-                //
-                //
-                //
+        Principal pc3 = new Principal();
+        pc3.setVisible(false);
+        dispose();
+        Menu_normal.setVisible(true);
+        Menu_normal.setLocationRelativeTo(this);
+        //
+        //
+        //
+        
 
-                DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
-                for (int k = 0; k < normales.size(); k++) {
-                    modelo.addRow(new Object[]{normales.get(k).getNombre(), normales.get(k).getEdad(), normales.get(k).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(k).getNumero_cuenta()});
-                }
-                DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
-                for (int j = 0; j < exams.size(); j++) {
-                    modelo.addRow(new Object[]{exams.get(j).getClase(), exams.get(j).getConocimiento(), exams.get(j).getTema(), exams.get(j).getPuntaje()});
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "contraseña o usuario erroneos");
-                break;
-            }
-        }
+
     }//GEN-LAST:event_jButton5MouseClicked
 
     /**
@@ -995,6 +1147,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton GuardarN;
     private javax.swing.JButton GuardarT;
     private javax.swing.JFrame Menu_normal;
+    private javax.swing.JFrame Menu_tutores;
     private javax.swing.JPasswordField Val_contra;
     private javax.swing.JTextField Val_user;
     private javax.swing.JFrame Validar_usuarios;
@@ -1028,25 +1181,35 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable5;
     private javax.swing.JFrame jf_crearcuenta;
     private javax.swing.JPasswordField pf_CN;
     private javax.swing.JPasswordField pf_Ct;
     private javax.swing.JTable tb_examenes;
     private javax.swing.JTable tb_listar;
+    private javax.swing.JTable tb_listartutor;
     private javax.swing.JTextField tf_LNN;
     private javax.swing.JTextField tf_LNT;
     private javax.swing.JTextField tf_NombreT;
