@@ -18,6 +18,7 @@ public class Alumnos {
     protected String lugar_Nac;
     protected String usuario;
     protected String contraseña;
+    protected String numero_cuenta;
     /*protected int conocimiento_acum;
     protected int nivel_aprendisaje;
     protected ArrayList clases = new ArrayList();
@@ -25,13 +26,14 @@ public class Alumnos {
     public Alumnos() {
     }
 
-    public Alumnos(String nombre, int edad, String carrera, String lugar_Nac, String usuario, String contraseña) {
+    public Alumnos(String nombre, int edad, String carrera, String lugar_Nac, String usuario, String contraseña, String numero_cuenta) {
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
         this.lugar_Nac = lugar_Nac;
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.numero_cuenta = numero_cuenta;
     }
 
     public String getNombre() {
@@ -81,6 +83,15 @@ public class Alumnos {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
+
+    public String getNumero_cuenta() {
+        return numero_cuenta;
+    }
+
+    public void setNumero_cuenta(String numero_cuenta) {
+        this.numero_cuenta = numero_cuenta;
+    }
+    
     
     
 }
