@@ -5,17 +5,11 @@
  */
 package examen1_ianlagos;
 
-/**
- *
- * @author ian
- */
+
 public class Examen1_ianlagos {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // la primera prueba de commit
     }
     
 }
