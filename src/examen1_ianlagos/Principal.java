@@ -22,18 +22,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
-        DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
-        for (int k = 0; k < normales.size(); k++) {
-            modelo.addRow(new Object[]{normales.get(k).getNombre(), normales.get(k).getEdad(), normales.get(k).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(k).getNumero_cuenta()});
-        }
-        DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
-        for (int j = 0; j < exams.size(); j++) {
-            modelo.addRow(new Object[]{exams.get(j).getClase(), exams.get(j).getConocimiento(), exams.get(j).getTema(), exams.get(j).getPuntaje()});
-        }
-        DefaultTableModel modelo3 = (DefaultTableModel) tb_listartutor.getModel();
-        for (int k = 0; k < tutores.size(); k++) {
-            modelo.addRow(new Object[]{tutores.get(k).getNombre(), tutores.get(k).getEdad(), tutores.get(k).getCarrera(), tutores.get(1).getLugar_Nac(), tutores.get(k).getNumero_cuenta()});
-        }
+
     }
 
     /**
@@ -1044,6 +1033,8 @@ public class Principal extends javax.swing.JFrame {
         dispose();
         Validar_usuarios.setVisible(true);
         Validar_usuarios.setLocationRelativeTo(this);
+
+
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
@@ -1090,10 +1081,23 @@ public class Principal extends javax.swing.JFrame {
         dispose();
         Menu_normal.setVisible(true);
         Menu_normal.setLocationRelativeTo(this);
+        Menu_tutores.setVisible(true);
+
         //
         //
         //
-        
+        DefaultTableModel modelo = (DefaultTableModel) tb_listar.getModel();
+        for (int k = 0; k < normales.size(); k++) {
+            modelo.addRow(new Object[]{normales.get(k).getNombre(), normales.get(k).getEdad(), normales.get(k).getCarrera(), normales.get(1).getLugar_Nac(), normales.get(k).getNumero_cuenta()});
+        }
+        DefaultTableModel modelo2 = (DefaultTableModel) tb_examenes.getModel();
+        for (int j = 0; j < exams.size(); j++) {
+            modelo.addRow(new Object[]{exams.get(j).getClase(), exams.get(j).getConocimiento(), exams.get(j).getTema(), exams.get(j).getPuntaje()});
+        }
+        DefaultTableModel modelo3 = (DefaultTableModel) tb_listartutor.getModel();
+        for (int k = 0; k < tutores.size(); k++) {
+            modelo.addRow(new Object[]{tutores.get(k).getNombre(), tutores.get(k).getEdad(), tutores.get(k).getCarrera(), tutores.get(1).getLugar_Nac(), tutores.get(k).getNumero_cuenta()});
+        }
 
 
     }//GEN-LAST:event_jButton5MouseClicked
